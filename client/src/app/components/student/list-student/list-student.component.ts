@@ -1,0 +1,14 @@
+import { Component, OnInit } from '@angular/core'
+
+import { Student } from '../student'
+@Component({
+  selector: 'app-list-student',
+  templateUrl: './list-student.component.html',
+  styleUrls: ['./list-student.component.css'],
+})
+export class ListStudentComponent implements OnInit {
+  constructor() {}
+
+  students: Student[] = []
+  ngOnInit(): void {}
+}

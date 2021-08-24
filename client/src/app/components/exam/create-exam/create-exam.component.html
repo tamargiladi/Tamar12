@@ -1,0 +1,26 @@
+<mat-card>
+  <form (submit)="onAddExam(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        name="title"
+        type="text"
+        ngModel
+        #title="ngModel"
+        placeholder="Title"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        name="teacher"
+        placeholder="Teacher Name"
+        type="text"
+        ngModel
+        #teacherName="ngModel"
+      />
+    </mat-form-field>
+    <br />
+    <button type="submit" mat-raised-button color="primary">New Exam</button>
+  </form>
+</mat-card>

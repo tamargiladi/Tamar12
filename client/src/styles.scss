@@ -1,0 +1,124 @@
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@use '~@angular/material' as mat;
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
+
+@include mat.core();
+
+$mat-custom: (
+  50: #3c5186,
+  100: #9b72aa,
+  200: #f8485e,
+  400: #fff5de,
+  400a: #1f1f1f,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    400: #d7aeae,
+    400a: #1f1f1f,
+  ),
+);
+$my-custom-level: mat.define-typography-level(
+  $font-family: 'Open Sans',
+  $font-weight: 300,
+  $font-size: 1rem,
+  $line-height: 1,
+  $letter-spacing: normal,
+);
+
+$angular-primary: mat.define-palette($mat-custom, 50);
+$angular-accent: mat.define-palette($mat-custom, 100);
+$angular-warn: mat.define-palette($mat-custom, 200);
+$angular-background: mat.define-palette($mat-custom, 400, 400a);
+$custom-typography: mat.define-typography-config(
+  $font-family: 'Open Sans',
+);
+
+$angular-default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+      background: $angular-background,
+    ),
+    typography: $custom-typography,
+  )
+);
+
+@include mat.all-component-themes($angular-default-theme);
+
+.mat-card {
+  margin: 20px;
+  background-color: mat-color($angular-background);
+}
+.mat-accordion-container {
+  margin: 20px;
+}
+.mat-accordion {
+}
+.mat-expansion-panel-header {
+  font-weight: 700;
+}
+
+.container-class {
+  background-color: mat-color($angular-background);
+  height: 100vh;
+}
+body {
+  margin: 0px;
+}
+
+.mat-toolbar {
+  height: auto;
+  background-image: url('/client/src/assets/images/banner.png');
+}
+
+.mat-toolbar img {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mat-raised-button:hover {
+  transform: scaleX(105%) scaleY(105%);
+  background-color: mat-color($angular-accent);
+}
+
+// table {
+//   height: 40px;
+//   border-width: 1px;
+//   border-style: solid;
+//   border-collapse: collapse;
+//   padding: 20px;
+//   background-color: rgb(215, 231, 255);
+//   border-color: white;
+// }
+// tr {
+//   height: 40px;
+//   border-width: 1px;
+//   border-style: solid;
+//   border-color: white;
+//   border-collapse: collapse;
+//   padding: 20px;
+// }
+// th {
+//   height: 40px;
+//   border-width: 1px;
+//   border-color: white;
+//   border-style: solid;
+//   background-color: cornflowerblue;
+
+//   border-collapse: collapse;
+//   padding: 20px;
+// }
+
+// td {
+//   padding: 20px;
+// }

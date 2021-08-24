@@ -1,0 +1,71 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <input
+        matInput
+        name="email"
+        ngModel
+        type="email"
+        placeholder="Email"
+        #emailInput="ngModel"
+        required
+        email
+      />
+      <mat-error>
+        *ngIf="emailInput.invalid">Please enter a valid email</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <input
+        matInput
+        name="password"
+        type="password"
+        ngModel
+        placeholder="Password"
+        #passwordInput="ngModel"
+        required
+      />
+      <mat-error *ngIf="!passwordInput.invalid"
+        >Please enter a valid password.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="accent" type="submit">Login</button>
+  </form>
+</mat-card>
+
+<!--https://v6.material.angular.io/components/tabs/api-->
+<!-- <div style="display: flex; justify-content: center">
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Login"> </mat-tab>
+    <app-login-form></app-login-form>
+    <mat-tab label="Sign Up"></mat-tab>
+  </mat-tab-group>
+</div> -->
+
+<!-- <div>
+  <mat-tab-group>
+    <mat-tab style="justify-content: center" label="Login">
+      <ng-template matTabContent>
+        <form>
+          <mat-card>
+            <mat-form-field>
+              <input matInput placeholder="Username" type="text"
+            /></mat-form-field>
+            <br />
+            <mat-form-field>
+              <input matInput placeholder="Password" type="password"
+            /></mat-form-field>
+            <br />
+            <button mat-flat-button mat-button color="accent">Sumbit</button>
+          </mat-card>
+        </form>
+      </ng-template>
+    </mat-tab>
+     <mat-tab style="justify-content: center" label="Sign Up">
+      <ng-template matTabContent> </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div> -->

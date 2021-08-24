@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <img
+    style="margin: 20px; width: 70px; height: 70px"
+    src="../../../assets/images/logo.png"
+  />
+
+  <p style="font-weight: bold" color="primary">EnglishUp</p>
+
+  <ul>
+    <li>
+      <a
+        mat-raised-button
+        color="primary"
+        routerLink="/"
+        routerLinkActive="mat-accent"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a
+        mat-raised-button
+        color="primary"
+        routerLink="/login"
+        routerLinkActive="mat-accent"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Registration</a
+      >
+    </li>
+  </ul>
+  <ul style="position: absolute; right: 0; top: 0; margin: 30px">
+    <li style="background-color: rgb(129, 129, 213); padding: 10px">
+      Welcome, Tamar Giladi!
+    </li>
+  </ul>
+</mat-toolbar>

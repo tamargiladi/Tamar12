@@ -1,0 +1,25 @@
+<!--https://v6.material.angular.io/components/tabs/api-->
+<div>
+  <mat-tab-group>
+    <mat-tab style="justify-content: center" label="Login">
+      <ng-template matTabContent>
+        <form>
+          <mat-card>
+            <mat-form-field>
+              <input matInput placeholder="Username" type="text"
+            /></mat-form-field>
+            <br />
+            <mat-form-field>
+              <input matInput placeholder="Password" type="password"
+            /></mat-form-field>
+            <br />
+            <button mat-flat-button mat-button color="accent">Sumbit</button>
+          </mat-card>
+        </form>
+      </ng-template>
+    </mat-tab>
+    <!-- <mat-tab style="justify-content: center" label="Sign Up">
+      <ng-template matTabContent> </ng-template>
+    </mat-tab>-->
+  </mat-tab-group>
+</div>
