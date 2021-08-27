@@ -1,0 +1,17 @@
+<mat-card>
+  <form (submit)="onAddGroup(groupForm)" #groupForm="ngForm">
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        name="title"
+        type="text"
+        ngModel
+        #title="ngModel"
+        placeholder="Title"
+      />
+    </mat-form-field>
+
+    <br />
+    <button type="submit" mat-raised-button color="primary">New Group</button>
+  </form>
+</mat-card>

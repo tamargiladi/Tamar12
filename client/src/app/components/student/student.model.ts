@@ -1,5 +1,6 @@
 export interface Student {
+  id: string
   firstName: string
   lastName: string
-  id: string
+  groupId: string
 }

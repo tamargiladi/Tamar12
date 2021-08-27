@@ -3,6 +3,11 @@ import { NgForm } from '@angular/forms'
 import { ActivatedRoute, ParamMap } from '@angular/router'
 import { Exam } from '../exam.model'
 import { ExamService } from '../exam.service'
+import { Group } from '../../group/group.model'
+
+import { GroupService } from '../../group/group.service'
+import { Subscription } from 'rxjs'
+
 @Component({
   selector: 'app-create-exam',
   templateUrl: './create-exam.component.html',
@@ -13,15 +18,24 @@ export class CreateExamComponent {
   enteredTeacher = ''
   isLoading = false
   exam: Exam
+  group: Group
+  groups: Group[]
+  private groupsSub: Subscription
+
   private mode = 'create'
   private examId: string
+  private groupIdNum: string
 
-  constructor(public examsService: ExamService, public route: ActivatedRoute) {}
+  constructor(
+    public examsService: ExamService,
+    public groupsService: GroupService,
+    public route: ActivatedRoute
+  ) {}
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
-      if (paramMap.has('postId')) {
+      if (paramMap.has('examId')) {
         this.mode = 'edit'
-        this.examId = paramMap.get('postId')
+        this.examId = paramMap.get('examId')
         this.isLoading = true
         this.examsService.getExam(this.examId).subscribe((examData) => {
           this.isLoading = false
@@ -37,6 +51,15 @@ export class CreateExamComponent {
         this.examId = null
       }
     })
+
+    this.groupsService.getGroups()
+
+    this.groupsSub = this.groupsService
+      .getGroupsUpdateListener()
+      .subscribe((groups: Group[]) => {
+        this.isLoading = false
+        this.groups = groups
+      })
   }
 
   onAddExam(form: NgForm) {

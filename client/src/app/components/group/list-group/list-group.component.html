@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-accordion>
+    <ng-container *ngFor="let group of groups">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> {{ group.title }} </mat-panel-title>
+          <mat-panel-description> </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let ind of group.students">
+          <p>{{ group.groupId }}, {{ ind }}</p>
+        </ng-container>
+      </mat-expansion-panel>
+    </ng-container>
+  </mat-accordion>
+</mat-card>

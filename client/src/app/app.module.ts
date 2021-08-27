@@ -27,6 +27,14 @@ import { MatListModule } from '@angular/material/list'
 import { CreateStudentComponent } from './components/student/create-student/create-student.component'
 import { ListStudentComponent } from './components/student/list-student/list-student.component'
 import { ConclusionExamsComponent } from './components/exam/conclusion-exams/conclusion-exams.component'
+import { CreateGroupComponent } from './components/group/create-group/create-group.component'
+import { ListGroupComponent } from './components/group/list-group/list-group.component'
+
+import { ScrollingModule } from '@angular/cdk/scrolling'
+import { MatSelectModule } from '@angular/material/select'
+import { CreateTrackComponent } from './components/track/create-track/create-track.component'
+
+import { NgxEchartsModule } from 'ngx-echarts'
 
 @NgModule({
   declarations: [
@@ -41,6 +49,9 @@ import { ConclusionExamsComponent } from './components/exam/conclusion-exams/con
     CreateStudentComponent,
     ListStudentComponent,
     ConclusionExamsComponent,
+    CreateGroupComponent,
+    ListGroupComponent,
+    CreateTrackComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +69,11 @@ import { ConclusionExamsComponent } from './components/exam/conclusion-exams/con
     MatExpansionModule,
     MatTableModule,
     MatListModule,
+    ScrollingModule,
+    MatSelectModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

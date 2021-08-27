@@ -58,15 +58,14 @@ $angular-default-theme: mat.define-light-theme(
 .mat-accordion-container {
   margin: 20px;
 }
-.mat-accordion {
-}
 .mat-expansion-panel-header {
   font-weight: 700;
 }
 
 .container-class {
   background-color: mat-color($angular-background);
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 body {
   margin: 0px;
@@ -83,12 +82,24 @@ body {
 }
 
 .main {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans ', sans-serif;
 }
-
 .mat-raised-button:hover {
   transform: scaleX(105%) scaleY(105%);
   background-color: mat-color($angular-accent);
+}
+
+h1 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height, or 120% */
+
+  letter-spacing: 0.15px;
+
+  color: #c4c4c4;
 }
 
 // table {

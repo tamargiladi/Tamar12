@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 
-import { Student } from '../student'
+import { Student } from '../student.model'
 @Component({
   selector: 'app-list-student',
   templateUrl: './list-student.component.html',
@@ -10,5 +10,8 @@ export class ListStudentComponent implements OnInit {
   constructor() {}
 
   students: Student[] = []
-  ngOnInit(): void {}
+  isLoading = false
+  ngOnInit(): void {
+    
+  }
 }

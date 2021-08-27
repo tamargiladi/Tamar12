@@ -28,18 +28,18 @@ router.post('', (req, res, next) => {
 router.get('', (req, res, next) => {
   Exam.find().then((documents) => {
     res.status(200).json({
-      message: 'Posts fetched successfully!',
+      message: 'Exams fetched successfully!',
       exams: documents,
     })
   })
 })
 
 router.get('/:id', (req, res, next) => {
-  Post.findById(req.params.id).then((exam) => {
+  Exam.findById(req.params.id).then((exam) => {
     if (exam) {
       res.status(200).json(exam)
     } else {
-      res.status(404).json({ message: 'Post not found!' })
+      res.status(404).json({ message: 'Exam not found!' })
     }
   })
 })

@@ -21,6 +21,20 @@
       />
     </mat-form-field>
     <br />
+    <mat-form-field>
+      <mat-label>Group ID</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let group of groups">
+          {{ group.groupId }}
+        </mat-option>
+        <mat-option>
+          <button mat-stroked-button color="primary">New Group</button>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br />
     <button type="submit" mat-raised-button color="primary">New Exam</button>
+    <br />
   </form>
 </mat-card>

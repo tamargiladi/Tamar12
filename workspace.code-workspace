@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"name": "backend",
+		"path": "../zi/englishApp_git/backend"
+	},
+	{
+		"name": "englishApp",
+		"path": "../zi/englishApp_git/englishApp"
+	}
+],
+  "settings": {}
+}

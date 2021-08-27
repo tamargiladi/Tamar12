@@ -20,6 +20,10 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "bootstrap": "^5.1.0",
+    "chart.js": "^3.5.1",
+    "echarts": "^5.1.2",
+    "ng-uikit-pro-standard": "^1.0.0",
+    "ngx-echarts": "^7.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

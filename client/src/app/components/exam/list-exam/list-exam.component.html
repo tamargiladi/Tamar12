@@ -15,20 +15,18 @@
           <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>ID</th>
           </tr>
-          <ng-container *ngFor="let student of exam.students">
-            <tr>
-              <td>
-                {{ student.firstName }}
-              </td>
-              <td>
-                {{ student.lastName }}
-              </td>
-              <td>
-                {{ student.id }}
-              </td>
-            </tr>
+          <ng-container *ngFor="let student of students">
+            <ng-container *ngIf="student.groupId == '1'">
+              <tr>
+                <td>
+                  {{ student.firstName }}
+                </td>
+                <td>
+                  {{ student.lastName }}
+                </td>
+              </tr>
+            </ng-container>
           </ng-container>
         </table>
       </div>
